@@ -40,3 +40,5 @@ function App() {
 }
 
 export default App;
+
+/*first go through README.md & intsall requiring dependencies*/
