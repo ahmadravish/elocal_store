@@ -8,7 +8,7 @@ export default function Header() {
       <div className='nav-center'>
         <div className='nav-header'>
           <Link to='/'>
-            <img src={logo} className='logo' />
+            <img src={logo} alt='img' className='logo' />
           </Link>
         </div>
         <ul className='nav-links show-nav'>

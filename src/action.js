@@ -20,3 +20,14 @@ export const getProducts = () => {
     dispatch({ type: GET_PRODUCTS, payload: data });
   };
 };
+
+export const getSeller = () => {
+  return async function (dispatch) {
+    dispatch(setLoading());
+    const response = await fetch(
+      'http://35.225.50.138:9091/otherSellers?productId=9&variantId=6'
+    );
+    const data = await response.json();
+    dispatch({ type: GET_SELLER, payload: data });
+  };
+};

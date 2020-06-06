@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getProducts } from '../action';
-import Header from './Header';
+import { Link } from 'react-router-dom';
 
 const Products = ({ getProducts, loading, products }) => {
   React.useEffect(() => {
@@ -31,7 +31,7 @@ const Products = ({ getProducts, loading, products }) => {
   return (
     <>
       <section className='single-product'>
-        <img src={resourceURL} className='single-product-image' />
+        <img src={resourceURL} alt='img' className='single-product-image' />
         <article>
           <h1>{productName}</h1>
           <ul>
@@ -40,9 +40,14 @@ const Products = ({ getProducts, loading, products }) => {
             })}
           </ul>
           <h2> ₹{mrp}</h2>
-          <div className>
+          <div>
             <button className='bblock'>Buy Now</button>
             <button className='bblock'>add to cart</button>
+          </div>
+          <div>
+            <Link to='/seller' class='cblock'>
+              sellers
+            </Link>
           </div>
         </article>
       </section>

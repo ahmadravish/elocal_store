@@ -19,7 +19,7 @@ const middleware = [thunk];
 const store = createStore(
   combineReducers({
     productState: productReducer,
-    // sellerState: sellerReducer,
+    sellerState: sellerReducer,
   }),
   composeWithDevTools(applyMiddleware(...middleware))
 );
