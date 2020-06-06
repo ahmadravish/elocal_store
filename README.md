@@ -2,9 +2,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## To start the application install following dependencies
   npm i
+  
   npm i redux
+  
   npm i --save react-redux
+  
   npm i --save redux-devtools-extension
+  
   npm i --save redux thunk
 
 
