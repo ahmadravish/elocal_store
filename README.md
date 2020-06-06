@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To start the application install following dependencies
+  npm i
+  npm i redux
+  npm i --save react-redux
+  npm i --save redux-devtools-extension
+  npm i --save redux thunk
+
+
 ## Available Scripts
 
 In the project directory, you can run:
