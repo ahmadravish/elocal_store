@@ -1,38 +1,134 @@
-.App {
+.block {
+  display: block;
+  width: 20%;
+  border: 3px solid black;
+  margin: 100px;
+  background-color: white;
+  color: white;
+  padding: 24px 28px;
+  font-size: 26px;
+  font-weight: 900;
+  color: black;
+  cursor: pointer;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.block:hover {
+  background-color: #ddd;
+  color: black;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.bblock {
+  display: block;
+  width: 20%;
+  margin-right: 10px;
+  background-color: #0080ff;
   color: white;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  letter-spacing: var(--mainSpacing);
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  float: left;
 }
 
-.App-link {
-  color: #61dafb;
+/* 
+====== 
+Header
+======
+*/
+.logo {
+  margin: 0 auto;
+  width: 9rem;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  background: var(--offWhite);
+  z-index: 1;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-links {
+  /* height: 0;
+    overflow: hidden;*/
+  transition: var(--mainTransition);
+  list-style-type: none;
+}
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 0;
+  color: var(--mainBlack);
+  transition: var(--mainTransition);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: var(--mainSpacing);
+}
+.nav-links a:hover {
+  color: var(--primaryColor);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.show-nav {
+  height: 100px;
+}
+@media screen and (min-width: 768px) {
+  .nav-btn {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+    margin-left: 4rem;
+  }
+  .nav-links a {
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+.single-product {
+  width: var(--smallWidth);
+  max-width: var(--fullWidth);
+  margin: 4rem auto;
+}
+
+.single-product article {
+  margin-bottom: 3rem;
+}
+.single-product-image {
+  max-width: 25rem;
+  align-self: center;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.single-product h1 {
+  text-transform: capitalize;
+  font-size: 2.3rem;
+  letter-spacing: var(--mainSpacing);
+}
+.single-product h2 {
+  color: var(--primaryColor);
+}
+.single-product p {
+  line-height: 2;
+  letter-spacing: 1px;
+}
+@media screen and (min-width: 992px) {
+  .single-product {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 3rem;
   }
 }

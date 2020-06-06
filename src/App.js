@@ -1,25 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
+import Product from './pages/Product';
+import Seller from './pages/Seller';
+import Home from './pages/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+
+//Redux
+import thunk from 'redux-thunk';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+//reducer
+import productReducer from './productReducer';
+import sellerReducer from './sellerReducer';
+import Header from './pages/Header';
+const middleware = [thunk];
+
+const store = createStore(
+  combineReducers({
+    productState: productReducer,
+    // sellerState: sellerReducer,
+  }),
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/product' component={Product} />
+          <Route exact path='/seller' component={Seller} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 
